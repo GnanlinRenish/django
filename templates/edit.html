@@ -1,0 +1,22 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit</title>
+  </head>
+  <body>
+    <form method="POST">
+      {% csrf_token %}
+
+      <input type="text" name="name" value="{{ item.name }}" />
+      <input type="date" name="date" value="{{ item.date}}" />
+
+      <button type="submit">Update</button>
+    </form>
+  </body>
+</html>

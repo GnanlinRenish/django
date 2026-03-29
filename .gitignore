@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Django
+*.log
+*.pot
+*.pyc
+
+# Environment variables (VERY IMPORTANT)
+.env
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Static & media (optional depending on setup)
+media/
+assets/
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

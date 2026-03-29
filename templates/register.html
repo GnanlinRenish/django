@@ -1,0 +1,50 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/register.css' %}" />
+    <title>Register</title>
+  </head>
+  <body>
+    <form method="POST">
+      {% csrf_token %}
+      <div>
+        <label>First name</label>
+        <input type="text" name="firstname" />
+      </div>
+      <div>
+        <label>Last name</label>
+        <input type="text" name="lastname" />
+      </div>
+      <div>
+        <label>Username</label>
+        <input type="text" name="username" />
+        {% if "username" in error %}
+        <p>Username already exists</p>
+        {% endif %}
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" name="email" />
+        {% if "email" in error %}
+        <p>Email already exists</p>
+        {% endif %}
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" name="password1" />
+      </div>
+      <div>
+        <label>Reenter Password</label>
+        <input type="password" name="password2" />
+        {% if "password" in error %}
+        <p>Password wrong</p>
+        {% endif %}
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

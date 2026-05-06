@@ -18,7 +18,7 @@
       </form>
       {% for d in data %}
       <div>
-        <label>{{d.id}}</label>
+        <label>{{ forloop.counter }}</label>
         <label>{{d.name}}</label>
         <label>{{d.date}}</label>
         <a href="{% url 'edit' d.id %}">
